@@ -106,16 +106,7 @@ void Leds_blink(uint8_t n, const uint8_t Lednrs[], speed Speed, uint8_t Times)
 
 	return;
 }
-void New_round(uint8_t L_points, uint8_t R_points)
-{
-	HAL_Delay(300);
-	//Blink_leds(NUM_LEDS, ALL_LEDS, 100);
-	HAL_Delay(100);
-	//Blink_leds(NUM_LEDS, ALL_LEDS, 100);
-	HAL_Delay(250);
-	//Show_points(1250);
-	return;
-}
+
 void Show_points(uint8_t L_points, uint8_t R_points, float Seconds) //For how to long to show the points
 {
 	uint8_t i;

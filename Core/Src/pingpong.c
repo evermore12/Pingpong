@@ -49,8 +49,8 @@ void Pingpong(void)
 
 	InitialSpeed = 500000; // Number of loops
 	Speed = InitialSpeed;
-	Speedup = 1000*5;
-	MaxSpeed = Speed - Speedup*8*8;
+	Speedup = 1000*5; //(Amount of speed up, 1000 * Multiplier)
+	MaxSpeed = Speed - Speedup*8*9;
 	/* Infinite loop */
 	while (1)
 	{
