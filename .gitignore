@@ -1,0 +1,6 @@
+Debug/
+Release/
+.settings/
+.osx.project
+*.launch
+.DS_Store
