@@ -1,8 +1,13 @@
-/*
- * test.h
- *
- *  Created on: Nov 3, 2026
- *      Author: test
+/**
+ ******************************************************************************
+@brief Test, declarations of test programs for Pingpong-program
+@file test.h
+@author Jonathan Björnebro
+@version 1.0
+@date 12-November-2026
+@brief Declarations of the test programs in test.c
+@note Comment written by AI (Claude)
+ ******************************************************************************
  */
 
 #ifndef INC_TEST_H_

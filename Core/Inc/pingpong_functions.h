@@ -1,8 +1,13 @@
-/*
- * pingpong_functions.h
- *
- *  Created on: Nov 3, 2026
- *      Author: test
+/**
+ ******************************************************************************
+@brief Pingpong, declarations of functions for Pingpong-program
+@file pingpong_functions.h
+@author Jonathan Björnebro
+@version 1.0
+@date 12-November-2026
+@brief Declarations of the LED and button functions in pingpong_functions.c
+@note Comment written by AI (Claude)
+ ******************************************************************************
  */
 
 #ifndef INC_PINGPONG_FUNCTIONS_H_

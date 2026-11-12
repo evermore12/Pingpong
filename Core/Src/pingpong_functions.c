@@ -4,8 +4,9 @@
 @file pingpong_functions.c
 @author Jonathan Björnebro
 @version 1.0
-@date 12-August-2019
-@brief Functions and structures for program Pingpong
+@date 12-November-2026
+@brief Functions for the LEDs and buttons on the Pingpong board
+@note Comment updated by AI (Claude)
  ******************************************************************************
  */
 #include <stdint.h>
@@ -35,6 +36,13 @@ bool R_hit(void)
 	else return false;
 }
 
+/**
+@brief Led_set, turn a single LED on or off without changing the others
+@param Lednr uint8_t, number of the LED, 1-8. Other values are ignored
+@param state GPIO_PinState, GPIO_PIN_SET turns the LED on, GPIO_PIN_RESET turns it off
+@return void
+@note Comment written by AI (Claude)
+ */
 static void Led_set(uint8_t Lednr, GPIO_PinState state)
 {
 	switch(Lednr)
@@ -84,6 +92,14 @@ void Led_on(uint8_t Lednr)
 	}
 	return;
 }
+/**
+@brief Leds_set, turn several LEDs on or off at the same time
+@param n uint8_t, number of LEDs in Lednrs
+@param Lednrs const uint8_t[], the LED numbers (1-8) to change
+@param state GPIO_PinState, GPIO_PIN_SET turns the LEDs on, GPIO_PIN_RESET turns them off
+@return void
+@note Comment written by AI (Claude)
+ */
 static void Leds_set(uint8_t n, const uint8_t Lednrs[], GPIO_PinState state)
 {
 	uint8_t i;
@@ -92,6 +108,16 @@ static void Leds_set(uint8_t n, const uint8_t Lednrs[], GPIO_PinState state)
 	return;
 }
 
+/**
+@brief Leds_blink, blink several LEDs together, used to mark a missed ball
+Blocks while blinking. All LEDs are off when the function returns.
+@param n uint8_t, number of LEDs in Lednrs
+@param Lednrs const uint8_t[], the LED numbers (1-8) to blink
+@param Speed speed, time in ms that the LEDs are on, and then off, in each blink
+@param Times uint8_t, the loop runs Times+1 times, so the LEDs blink Times+1 times
+@return void
+@note Comment written by AI (Claude)
+ */
 //Simple blink leds function
 void Leds_blink(uint8_t n, const uint8_t Lednrs[], speed Speed, uint8_t Times)
 {
@@ -107,6 +133,17 @@ void Leds_blink(uint8_t n, const uint8_t Lednrs[], speed Speed, uint8_t Times)
 	return;
 }
 
+/**
+@brief Show_points, shows points after missed ball
+L's points light LEDs from LED1 inwards and R's points light LEDs from LED8
+inwards. Example: L=2 and R=3 lights LED 1, 2 and 6, 7, 8.
+Blocks while the score is shown. All LEDs are off when the function returns.
+@param L_points uint8_t, points for left player, 0-4
+@param R_points uint8_t, points for right player, 0-4
+@param Seconds float, how long the score is shown, in seconds
+@return void, no return value
+@note Comment written by AI (Claude)
+ */
 void Show_points(uint8_t L_points, uint8_t R_points, float Seconds) //For how to long to show the points
 {
 	uint8_t i;
@@ -123,6 +160,15 @@ void Show_points(uint8_t L_points, uint8_t R_points, float Seconds) //For how to
 	return;
 }
 
+/**
+@brief Led_blink, blink a single LED, used to show whose turn it is to serve
+All other LEDs are off while it blinks. Blocks while blinking.
+@param Lednr uint8_t, number of the LED to blink, 1-8
+@param Speed speed, time in ms that the LED is on, and then off, in each blink
+@param Times uint8_t, number of blinks
+@return void
+@note Comment written by AI (Claude)
+ */
 void Led_blink(uint8_t Lednr, speed Speed, uint8_t Times)
 {
 	uint8_t i;

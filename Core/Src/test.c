@@ -1,12 +1,25 @@
-/*
- * test.c
- *
- *  Created on: Nov 3, 2026
- *      Author: test
+/**
+ ******************************************************************************
+@brief Test, test programs for Pingpong-program
+@file test.c
+@author Jonathan Björnebro
+@version 1.0
+@date 12-November-2026
+@brief Test programs that check the LED and button functions in
+pingpong_functions.c on the Pingpong board, one function at a time
+@note Comment written by AI (Claude)
+ ******************************************************************************
  */
 #include <stdint.h>
 #include "main.h"
 #include "pingpong_functions.h"
+/**
+@brief Test_buttons, test L_hit and R_hit
+LED4 lights up. Each press on L moves the lit LED one step right, each press
+on R moves it one step left. The test ends when the LED moves past either end.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_buttons(void)
 {
 	int8_t j;
@@ -35,6 +48,13 @@ void Test_buttons(void)
 	}
 	return;
 }
+
+/**
+@brief Test_show_points, test Show_points
+Shows every score from 0-0 to 4-4, one second each.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_show_points(void)
 {
 	int8_t R_points;
@@ -45,6 +65,13 @@ void Test_show_points(void)
 		}
 	}
 }
+
+/**
+@brief Test_led_blink, test Led_blink
+Each LED 1-8 in turn blinks 3 times at slow, medium and fast speed.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_led_blink(void)
 {
 	uint8_t i;
@@ -58,6 +85,13 @@ void Test_led_blink(void)
 		HAL_Delay(500);
 	}
 }
+
+/**
+@brief Test_leds_blink, test Leds_blink
+All LEDs blink together at slow, medium and fast speed.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_leds_blink(void)
 {
 	Leds_blink(NUM_LEDS, ALL_LEDS, SPEED_SLOW, 10);
@@ -68,6 +102,13 @@ void Test_leds_blink(void)
 	HAL_Delay(500);
 
 }
+
+/**
+@brief Test_led, test Led_on
+Lights LED 1-8 one at a time for 500 ms each, then turns all LEDs off.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_led(void)
 {
 	int8_t Lednr;
@@ -81,12 +122,19 @@ void Test_led(void)
 	return;
 }
 
+/**
+@brief Test_program, runs the selected test
+Remove the // in front of the test to run and comment out the others.
+Called from main() when RUN_TEST_PROGRAM is defined.
+@return void
+@note Comment written by AI (Claude)
+ */
 void Test_program(void)
 {
 	//Test_led();
-	//Test_show_points();
+	Test_show_points();
 	//Test_buttons();
-	Test_led_blink();
+	//Test_led_blink();
 	//Test_leds_blink();
 }
 

@@ -2,10 +2,13 @@
 ******************************************************************************
 @brief   Pingpong statemachine for Pingpong-program
 @file    pingpong.c
-@author  Bengt Molin
-@version 1.0
-@date    12-August-2019
-@brief   Functions and structures for program Pingpong
+@author  Bengt Molin, Jonathan Björnebro
+@version 1.1
+@date    12-November-2026
+@brief   State machine for the Pingpong game. Based on the state machine in
+         the lab guide (Bengt Molin), extended with serve states, score
+         display, game over and a ball that speeds up while in play.
+@note    Comment updated by AI (Claude)
 
 ******************************************************************************
 */
@@ -34,6 +37,16 @@ typedef struct Tick
 	uint32_t CYCLE;
 	uint32_t CYCLE_MAX; //Cycle defines speed.
 }Tick;
+
+/**
+@brief Pingpong, runs the Pingpong game as a state machine
+Each pass through the while loop runs one state and selects the next one.
+A player returns the ball by pressing their button while the outermost LED
+on their side is lit. Pressing too early or too late gives the opponent a
+point. The players take turns to serve and the first to 4 points wins.
+@return void, the function never returns
+@note Comment written by AI (Claude)
+ */
 void Pingpong(void)
 {
 	bool ButtonPressed = false ;  // To remember that button is pressed
@@ -78,7 +91,9 @@ void Pingpong(void)
 				NextState = Start;  // Stay in Start state
 			break;
 		case Gameover:
-			Show_points(L_points, R_points, 1);
+			Show_points(L_points, R_points, 5);
+			L_points = 0;
+			R_points = 0;
 			NextState=Start;
 			break;
 		case ShowPoints:
