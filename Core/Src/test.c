@@ -7,7 +7,7 @@
 @date 12-November-2026
 @brief Test programs that check the LED and button functions in
 pingpong_functions.c on the Pingpong board, one function at a time
-@note Comment written by AI (Claude)
+@note AI disclosure: Doxygen comments drafted with Claude Opus 5.5 (Anthropic), November 2026.
  ******************************************************************************
  */
 #include <stdint.h>
@@ -18,7 +18,6 @@ pingpong_functions.c on the Pingpong board, one function at a time
 LED4 lights up. Each press on L moves the lit LED one step right, each press
 on R moves it one step left. The test ends when the LED moves past either end.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_buttons(void)
 {
@@ -53,7 +52,6 @@ void Test_buttons(void)
 @brief Test_show_points, test Show_points
 Shows every score from 0-0 to 4-4, one second each.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_show_points(void)
 {
@@ -70,7 +68,6 @@ void Test_show_points(void)
 @brief Test_led_blink, test Led_blink
 Each LED 1-8 in turn blinks 3 times at slow, medium and fast speed.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_led_blink(void)
 {
@@ -90,7 +87,6 @@ void Test_led_blink(void)
 @brief Test_leds_blink, test Leds_blink
 All LEDs blink together at slow, medium and fast speed.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_leds_blink(void)
 {
@@ -107,7 +103,6 @@ void Test_leds_blink(void)
 @brief Test_led, test Led_on
 Lights LED 1-8 one at a time for 500 ms each, then turns all LEDs off.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_led(void)
 {
@@ -127,7 +122,6 @@ void Test_led(void)
 Remove the // in front of the test to run and comment out the others.
 Called from main() when RUN_TEST_PROGRAM is defined.
 @return void
-@note Comment written by AI (Claude)
  */
 void Test_program(void)
 {

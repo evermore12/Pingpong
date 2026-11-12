@@ -8,7 +8,8 @@
 @brief   State machine for the Pingpong game. Based on the state machine in
          the lab guide (Bengt Molin), extended with serve states, score
          display, game over and a ball that speeds up while in play.
-@note    Comment updated by AI (Claude)
+@note    AI disclosure: file header updated and Pingpong() header drafted
+         with Claude Opus 5.5 (Anthropic), November 2026.
 
 ******************************************************************************
 */
@@ -45,7 +46,6 @@ A player returns the ball by pressing their button while the outermost LED
 on their side is lit. Pressing too early or too late gives the opponent a
 point. The players take turns to serve and the first to 4 points wins.
 @return void, the function never returns
-@note Comment written by AI (Claude)
  */
 void Pingpong(void)
 {

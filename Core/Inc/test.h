@@ -6,7 +6,7 @@
 @version 1.0
 @date 12-November-2026
 @brief Declarations of the test programs in test.c
-@note Comment written by AI (Claude)
+@note AI disclosure: Doxygen comments drafted with Claude Opus 5.5 (Anthropic), November 2026.
  ******************************************************************************
  */
 

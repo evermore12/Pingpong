@@ -6,7 +6,8 @@
 @version 1.0
 @date 12-November-2026
 @brief Functions for the LEDs and buttons on the Pingpong board
-@note Comment updated by AI (Claude)
+@note AI disclosure: file header updated and function headers drafted with
+Claude Opus 5.5 (Anthropic), November 2026, except the headers of L_hit, R_hit and Led_on.
  ******************************************************************************
  */
 #include <stdint.h>
@@ -41,7 +42,6 @@ bool R_hit(void)
 @param Lednr uint8_t, number of the LED, 1-8. Other values are ignored
 @param state GPIO_PinState, GPIO_PIN_SET turns the LED on, GPIO_PIN_RESET turns it off
 @return void
-@note Comment written by AI (Claude)
  */
 static void Led_set(uint8_t Lednr, GPIO_PinState state)
 {
@@ -98,7 +98,6 @@ void Led_on(uint8_t Lednr)
 @param Lednrs const uint8_t[], the LED numbers (1-8) to change
 @param state GPIO_PinState, GPIO_PIN_SET turns the LEDs on, GPIO_PIN_RESET turns them off
 @return void
-@note Comment written by AI (Claude)
  */
 static void Leds_set(uint8_t n, const uint8_t Lednrs[], GPIO_PinState state)
 {
@@ -116,7 +115,6 @@ Blocks while blinking. All LEDs are off when the function returns.
 @param Speed speed, time in ms that the LEDs are on, and then off, in each blink
 @param Times uint8_t, the loop runs Times+1 times, so the LEDs blink Times+1 times
 @return void
-@note Comment written by AI (Claude)
  */
 //Simple blink leds function
 void Leds_blink(uint8_t n, const uint8_t Lednrs[], speed Speed, uint8_t Times)
@@ -142,7 +140,6 @@ Blocks while the score is shown. All LEDs are off when the function returns.
 @param R_points uint8_t, points for right player, 0-4
 @param Seconds float, how long the score is shown, in seconds
 @return void, no return value
-@note Comment written by AI (Claude)
  */
 void Show_points(uint8_t L_points, uint8_t R_points, float Seconds) //For how to long to show the points
 {
@@ -167,7 +164,6 @@ All other LEDs are off while it blinks. Blocks while blinking.
 @param Speed speed, time in ms that the LED is on, and then off, in each blink
 @param Times uint8_t, number of blinks
 @return void
-@note Comment written by AI (Claude)
  */
 void Led_blink(uint8_t Lednr, speed Speed, uint8_t Times)
 {
